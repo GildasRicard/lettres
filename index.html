@@ -302,11 +302,94 @@
                 padding-bottom: 2em;
             }
         }
+
+        /* Cadre de téléchargement PDF - Positionné à gauche du titre */
+        .download-container {
+            position: absolute;
+            left: 20px;
+            top: 40px;
+            z-index: 100;
+        }
+
+        .download-box {
+            background-color: #fff;
+            border: 1px solid #e0e0e0;
+            padding: 0.6em 1em;
+            border-radius: 4px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .download-label {
+            display: block;
+            font-size: 0.75em;
+            color: #7f8c8d;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.5em;
+            font-family: sans-serif;
+        }
+
+        .download-link {
+            display: inline-flex;
+            align-items: center;
+            color: #1f2d3a;
+            text-decoration: none;
+            font-weight: bold;
+            border: 1.2px solid #1f2d3a;
+            padding: 0.4em 0.8em;
+            border-radius: 3px;
+            transition: all 0.2s ease;
+            font-size: 0.85em;
+        }
+
+        .download-link:hover {
+            background-color: #1f2d3a;
+            color: #fff !important;
+        }
+
+        .download-link svg {
+            margin-right: 6px;
+            width: 16px;
+            height: 16px;
+        }
+
+        /* Masquer sur mobile pour éviter les chevauchements */
+        @media (max-width: 1100px) {
+            .download-container {
+                position: static;
+                text-align: center;
+                margin: 0 auto 2em auto;
+            }
+
+            .download-box {
+                display: inline-flex;
+                align-items: center;
+            }
+        }
     </style>
 
 </head>
 
 <body>
+    <div class="download-container">
+        <div class="download-box">
+            <span class="download-label">Édition PDF</span>
+            <a href="https://1drv.ms/b/c/88f1a0683f69111b/IQDT9iJcDMnsTL7dUYmiFsDnARA4KHxt64K8Py0y8kp3aJo?e=ZWmggU"
+                class="download-link" target="_blank">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                    <polyline points="7 10 12 15 17 10"></polyline>
+                    <line x1="12" y1="15" x2="12" y2="3"></line>
+                </svg>
+                Télécharger
+            </a>
+        </div>
+    </div>
+
     <header>
         <h1 class="main-title">Lettres pastorales du diocèse de Saint-Brieuc, fin 19ème siècle</h1>
 
@@ -6745,85 +6828,85 @@
             GR, janvier 2026
         </p>
     </footer>
-	
-	        <section class="synthese-section">
-            <p class="intro-lead">
-                Voici une synthèse théologique des lettres pastorales analysées (1873-1900), qui reflètent les
-                préoccupations majeures des évêques de Saint-Brieuc et Tréguier à la fin du XIXe siècle.
-            </p>
 
-            <h2>Une Citadelle de Foi face à la Modernité</h2>
-            <p>
-                La théologie développée par <strong>NN.SS. David, Bouché et Fallières</strong> durant cette période est
-                résolument défensive, identitaire et ultramontaine. Elle s'articule autour de trois axes majeurs : la
-                fidélité inconditionnelle à Rome, la préservation de l'identité bretonne comme rempart moral, et une
-                spiritualité de réparation centrée sur la Charité et le Sacré-Cœur.
-            </p>
+    <section class="synthese-section">
+        <p class="intro-lead">
+            Voici une synthèse théologique des lettres pastorales analysées (1873-1900), qui reflètent les
+            préoccupations majeures des évêques de Saint-Brieuc et Tréguier à la fin du XIXe siècle.
+        </p>
 
-            <h3>1. Une Ecclésiologie de Combat et de Fidélité (Ultramontanisme)</h3>
-            <p>
-                L'axe vertical de cette théologie est le lien indéfectible avec la Papauté sur fond de crise (perte des
-                États pontificaux en 1870, République anticléricale en France).
-            </p>
-            <ul>
-                <li><strong>La Papauté comme clé de voûte :</strong> Dans sa lettre de 1883, Mgr Bouché développe une
-                    théologie politique de la Souveraineté Temporelle du Pape. L'indépendance territoriale du Saint-Père
-                    n'est pas vue comme une question politique, mais comme une nécessité théologique pour garantir la
-                    liberté spirituelle de l'Église.</li>
-                <li><strong>Le Denier de Saint-Pierre :</strong> Il est présenté non comme une simple quête, mais comme
-                    un acte théologal de piété filiale et de communion avec le "Père commun" spolié. L'Église est une
-                    famille dont le chef est menacé.</li>
-            </ul>
+        <h2>Une Citadelle de Foi face à la Modernité</h2>
+        <p>
+            La théologie développée par <strong>NN.SS. David, Bouché et Fallières</strong> durant cette période est
+            résolument défensive, identitaire et ultramontaine. Elle s'articule autour de trois axes majeurs : la
+            fidélité inconditionnelle à Rome, la préservation de l'identité bretonne comme rempart moral, et une
+            spiritualité de réparation centrée sur la Charité et le Sacré-Cœur.
+        </p>
 
-            <h3>2. Théologie Morale et Sociale : La Famille Bretonne</h3>
-            <p>
-                L'axe horizontal est la défense de la société chrétienne traditionnelle, dont la "famille bretonne" est
-                le sanctuaire.
-            </p>
-            <ul>
-                <li><strong>Le fléau de l'Intempérance :</strong> Mgr David (1876) développe une morale sociale très
-                    concrète. L'ivrognerie n'est pas seulement un vice, c'est "la plaie de la famille bretonne" qui
-                    détruit l'image de Dieu en l'homme (raison/liberté).</li>
-                <li><strong>La Famille comme Église domestique :</strong> La lettre insiste sur le rôle sacerdotal du
-                    père et de la mère. Si l'homme s'enivre, il abdique sa dignité de "représentant de Dieu" au foyer.
-                    L'identité bretonne ("la foi bretonne") est théologisée comme une immunité naturelle contre la
-                    corruption moderne, à condition de rejeter les vices exogènes ou modernes.</li>
-            </ul>
+        <h3>1. Une Ecclésiologie de Combat et de Fidélité (Ultramontanisme)</h3>
+        <p>
+            L'axe vertical de cette théologie est le lien indéfectible avec la Papauté sur fond de crise (perte des
+            États pontificaux en 1870, République anticléricale en France).
+        </p>
+        <ul>
+            <li><strong>La Papauté comme clé de voûte :</strong> Dans sa lettre de 1883, Mgr Bouché développe une
+                théologie politique de la Souveraineté Temporelle du Pape. L'indépendance territoriale du Saint-Père
+                n'est pas vue comme une question politique, mais comme une nécessité théologique pour garantir la
+                liberté spirituelle de l'Église.</li>
+            <li><strong>Le Denier de Saint-Pierre :</strong> Il est présenté non comme une simple quête, mais comme
+                un acte théologal de piété filiale et de communion avec le "Père commun" spolié. L'Église est une
+                famille dont le chef est menacé.</li>
+        </ul>
 
-            <h3>3. Hagiographie et Identité : La "Terre de Saints"</h3>
-            <p>
-                La théologie locale repose sur l'idée que la Bretagne est une terre élue, protégée par ses propres
-                intercesseurs.
-            </p>
-            <ul>
-                <li><strong>Le Culte de Saint Yves :</strong> La lettre de 1890 (Mgr Fallières) sur la reconstruction du
-                    tombeau de Saint Yves à Tréguier est centrale. Saint Yves est présenté comme le modèle total :
-                    savant (Paris/Orléans) mais resté humblement breton ; noble mais serviteur des pauvres ; juge mais
-                    conciliateur.</li>
-                <li><strong>Continuité historique :</strong> Reconstruire le tombeau détruit par la Révolution, c'est
-                    renouer la chaîne du temps et réaffirmer que la Bretagne reste chrétienne malgré les bouleversements
-                    séculaires.</li>
-            </ul>
+        <h3>2. Théologie Morale et Sociale : La Famille Bretonne</h3>
+        <p>
+            L'axe horizontal est la défense de la société chrétienne traditionnelle, dont la "famille bretonne" est
+            le sanctuaire.
+        </p>
+        <ul>
+            <li><strong>Le fléau de l'Intempérance :</strong> Mgr David (1876) développe une morale sociale très
+                concrète. L'ivrognerie n'est pas seulement un vice, c'est "la plaie de la famille bretonne" qui
+                détruit l'image de Dieu en l'homme (raison/liberté).</li>
+            <li><strong>La Famille comme Église domestique :</strong> La lettre insiste sur le rôle sacerdotal du
+                père et de la mère. Si l'homme s'enivre, il abdique sa dignité de "représentant de Dieu" au foyer.
+                L'identité bretonne ("la foi bretonne") est théologisée comme une immunité naturelle contre la
+                corruption moderne, à condition de rejeter les vices exogènes ou modernes.</li>
+        </ul>
 
-            <h3>4. Spiritualité de la Charité</h3>
-            <p>
-                Enfin, Mgr Fallières (1894) apporte une touche plus mystique avec sa lettre sur "L'Amour de Dieu".
-            </p>
-            <ul>
-                <li><strong>Théologie affective :</strong> S'inspirant de Saint François de Sales, il prêche un amour de
-                    Dieu accessible à tous ("bonnes femmes", "ignorants"). C'est une réponse spirituelle à la dureté des
-                    temps : face à la "haine" du monde moderne, le chrétien doit répondre par une surabondance de
-                    Charité (le Sacré-Cœur).</li>
-            </ul>
+        <h3>3. Hagiographie et Identité : La "Terre de Saints"</h3>
+        <p>
+            La théologie locale repose sur l'idée que la Bretagne est une terre élue, protégée par ses propres
+            intercesseurs.
+        </p>
+        <ul>
+            <li><strong>Le Culte de Saint Yves :</strong> La lettre de 1890 (Mgr Fallières) sur la reconstruction du
+                tombeau de Saint Yves à Tréguier est centrale. Saint Yves est présenté comme le modèle total :
+                savant (Paris/Orléans) mais resté humblement breton ; noble mais serviteur des pauvres ; juge mais
+                conciliateur.</li>
+            <li><strong>Continuité historique :</strong> Reconstruire le tombeau détruit par la Révolution, c'est
+                renouer la chaîne du temps et réaffirmer que la Bretagne reste chrétienne malgré les bouleversements
+                séculaires.</li>
+        </ul>
 
-            <div class="summary-box">
-                <strong>En résumé :</strong> Ces évêques construisent une théologie de la résistance. Face à une
-                République laïque et une société industrielle naissante, ils proposent un modèle de société organique :
-                soudée autour du Pape à Rome, enracinée dans la paroisse et la famille en Bretagne, et vivifiée par une
-                charité concrète envers les pauvres (modèle de Saint Yves).
-            </div>
-        </section>
-	
+        <h3>4. Spiritualité de la Charité</h3>
+        <p>
+            Enfin, Mgr Fallières (1894) apporte une touche plus mystique avec sa lettre sur "L'Amour de Dieu".
+        </p>
+        <ul>
+            <li><strong>Théologie affective :</strong> S'inspirant de Saint François de Sales, il prêche un amour de
+                Dieu accessible à tous ("bonnes femmes", "ignorants"). C'est une réponse spirituelle à la dureté des
+                temps : face à la "haine" du monde moderne, le chrétien doit répondre par une surabondance de
+                Charité (le Sacré-Cœur).</li>
+        </ul>
+
+        <div class="summary-box">
+            <strong>En résumé :</strong> Ces évêques construisent une théologie de la résistance. Face à une
+            République laïque et une société industrielle naissante, ils proposent un modèle de société organique :
+            soudée autour du Pape à Rome, enracinée dans la paroisse et la famille en Bretagne, et vivifiée par une
+            charité concrète envers les pauvres (modèle de Saint Yves).
+        </div>
+    </section>
+
 </body>
 
 </html>
