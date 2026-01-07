@@ -1,0 +1,3 @@
+﻿User-agent: *
+Allow: /
+Sitemap: https://gildasricard.github.io/lettres-pastorales/sitemap.xml
