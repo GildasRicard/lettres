@@ -247,68 +247,59 @@
             font-style: italic;
         }
 
-        /* Adaptabilité Mobile */
-        @media (max-width: 768px) {
-            body {
-                margin: 10px auto;
-                padding: 15px;
-                font-size: 16px;
-            }
-
-            h1.main-title {
-                font-size: 1.8em;
-                margin-top: 0.5em;
-            }
-
-            .presentation-box,
-            .toc-container,
-            .synthese-section {
-                padding: 1.2em;
-                margin-top: 1em;
-                margin-bottom: 2em;
-            }
-
-            .toc-title {
-                font-size: 1.5em;
-            }
-
-            .toc-table th,
-            .toc-table td {
-                padding: 0.6em;
-            }
-
-            .toc-table {
-                font-size: 0.9em;
-            }
-
-            .col-annee {
-                width: 50px;
-            }
-
-            .col-page {
-                width: 40px;
-            }
-
-            .synthese-section h2 {
-                font-size: 1.3em;
-            }
-
-            .synthese-section h3 {
-                font-size: 1.1em;
-            }
-
-            .page-container {
-                margin-bottom: 2em;
-                padding-bottom: 2em;
-            }
-        }
-
-        /* Cadre de téléchargement PDF - Positionné à gauche du titre */
-        .download-container {
+        /* Boîte de navigation élégante */
+        .nav-container {
             position: absolute;
             left: 20px;
             top: 40px;
-            z-index: 100;
+            z-index: 1000;
+        }
+
+        .nav-box {
+            background-color: #fff;
+            border: 1px solid #e0e0e0;
+            padding: 0.6em 1em;
+            border-radius: 4px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .nav-label {
+            display: block;
+            font-size: 0.75em;
+            color: #7f8c8d;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.5em;
+            font-family: sans-serif;
+        }
+
+        .nav-link {
+            display: inline-flex;
+            align-items: center;
+            color: #1f2d3a;
+            text-decoration: none;
+            font-weight: bold;
+            border: 1.2px solid #1f2d3a;
+            padding: 0.4em 0.8em;
+            border-radius: 3px;
+            transition: all 0.2s ease;
+            font-size: 0.85em;
+        }
+
+        .nav-link:hover {
+            background-color: #1f2d3a;
+            color: #fff !important;
+        }
+
+        /* Styles pour la boîte de téléchargement */
+        .download-container {
+            position: absolute;
+            right: 20px;
+            top: 40px;
+            z-index: 1000;
         }
 
         .download-box {
@@ -319,7 +310,7 @@
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
             display: flex;
             flex-direction: column;
-            align-items: flex-start;
+            align-items: flex-end;
         }
 
         .download-label {
@@ -350,30 +341,101 @@
             color: #fff !important;
         }
 
+        .nav-link svg,
         .download-link svg {
             margin-right: 6px;
             width: 16px;
             height: 16px;
+            flex-shrink: 0;
         }
 
-        /* Masquer sur mobile pour éviter les chevauchements */
+        /* Pied de page */
+        footer {
+            margin-top: 5em;
+            padding-top: 2em;
+            border-top: 1px solid #ddd;
+            text-align: center;
+            font-size: 0.9em;
+            color: #555;
+            padding-bottom: 40px;
+        }
+
+        /* Adaptabilité Mobile */
         @media (max-width: 1100px) {
-            .download-container {
+
+            .download-container,
+            .nav-container {
                 position: static;
                 text-align: center;
-                margin: 0 auto 2em auto;
+                margin: 0 auto 1em auto;
+                display: flex;
+                justify-content: center;
             }
 
-            .download-box {
+            .download-box,
+            .nav-box {
                 display: inline-flex;
                 align-items: center;
+                flex-direction: row;
+                gap: 10px;
+            }
+
+            .download-label,
+            .nav-label {
+                margin-bottom: 0;
             }
         }
+
+        @media (max-width: 768px) {
+            body {
+                margin: 0;
+                padding: 15px;
+                font-size: 16px;
+            }
+
+            h1.main-title {
+                font-size: 1.6em;
+            }
+
+            .presentation-box,
+            .toc-container,
+            .synthese-section {
+                padding: 1.2em;
+            }
+
+            .toc-table {
+                font-size: 0.85em;
+            }
+
+            .col-annee {
+                display: none;
+            }
+
+            /* On cache l'année sur petit mobile pour gagner de la place */
+        }
     </style>
+
 
 </head>
 
 <body>
+    <div class="nav-container">
+        <div class="nav-box">
+            <span class="nav-label">Navigation</span>
+            <a href="SYNTHESE_V2.html" class="nav-link">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                    <polyline points="14 2 14 8 20 8"></polyline>
+                    <line x1="16" y1="13" x2="8" y2="13"></line>
+                    <line x1="16" y1="17" x2="8" y2="17"></line>
+                    <polyline points="10 9 9 9 8 9"></polyline>
+                </svg>
+                Vers une synthèse <br> de ces documents
+            </a>
+        </div>
+    </div>
+
     <div class="download-container">
         <div class="download-box">
             <span class="download-label">Édition PDF</span>
@@ -389,6 +451,8 @@
             </a>
         </div>
     </div>
+
+
 
     <header>
         <h1 class="main-title">Lettres pastorales du diocèse de Saint-Brieuc, fin 19ème siècle</h1>
@@ -6823,11 +6887,6 @@
 
     </main>
 
-    <footer>
-        <p style="text-align: center; color: #999; margin-top: 3em; font-size: 0.9em;">
-            GR, janvier 2026
-        </p>
-    </footer>
 
     <section class="synthese-section">
         <p class="intro-lead">
@@ -6907,6 +6966,11 @@
         </div>
     </section>
 
+    <footer>
+        <p>Gildas Ricard - Janvier 2026 - Cette synthèse et ce site ont été effectués avec l'aide d'agents
+            conversationnels
+            (I.A.).</p>
+    </footer>
 </body>
 
 </html>
